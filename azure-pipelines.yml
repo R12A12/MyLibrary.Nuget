@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: Pool1
+  vmImage: windows-2019
 
 stages:
 - stage: Build_Stage
@@ -40,8 +40,8 @@ stages:
         publishVstsFeed: '77fda57e-5402-4efb-8d1b-7eb94d19203d'
         arguments: 
     - task: DotNetCoreCLI@2
-    inputs:
-      command: 'push'
-      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-      nuGetFeedType: 'internal'
-      publishVstsFeed: '91f0a0c4-7b77-4281-a009-4884ec5249af'
+      inputs:
+       command: 'push'
+       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+       nuGetFeedType: 'internal'
+       publishVstsFeed: '91f0a0c4-7b77-4281-a009-4884ec5249af'
