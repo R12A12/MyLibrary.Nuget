@@ -35,7 +35,6 @@ stages:
 
     - task: DotNetCoreCLI@2
       inputs:
-       command: 'push'
-       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-       nuGetFeedType: 'internal'
-       publishVstsFeed: 'f1f6a6f6-5903-49e5-9aae-57955789f2af'
+         command: 'push'
+         packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+         publishVstsFeed: 'f1f6a6f6-5903-49e5-9aae-57955789f2af'
